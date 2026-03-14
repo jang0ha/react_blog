@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import styled from "styled-components";
 
 const StyledInput = styled.input`
@@ -11,10 +12,20 @@ const StyledInput = styled.input`
   font-size: 1.6rem;
   line-height: 2rem;
   border: 1px solid #ddd;
+  &:focus {
+		outline:1px solid #111;
 `;
 
-export function TextInput(props) {
-  const { width, height, value, onChange } = props;
+export const TextInput = forwardRef(function TextInput(props, ref) {
+  const { height, value, onChange, name } = props;
 
-  return <StyledInput height={height} value={value} onChange={onChange} />;
-}
+  return (
+    <StyledInput
+      height={height}
+      value={value}
+      onChange={onChange}
+      ref={ref}
+      name={name}
+    />
+  );
+});

@@ -3,14 +3,16 @@ import { Link } from "react-router-dom";
 import List from "../components/List";
 import { useProjects } from "../hook/useProjects";
 import Loading from "../components/Loading";
-
+import { LinkButton } from "../components/Button";
 export default function HomePage() {
   const { projects, loading, error } = useProjects();
 
   return (
-    <div className="container">
-      <h2>프로젝트 리스트 </h2>
-      <Link to="/edit">프로젝트 등록</Link>
+    <section className="container">
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <h2>프로젝트 리스트 </h2>
+        <LinkButton to="/edit" title="프로젝트 등록" rounded={true} />
+      </div>
       {loading ? (
         <Loading />
       ) : error ? (
@@ -27,6 +29,6 @@ export default function HomePage() {
           linkTo={(post) => `/projects/${post.project_key}`}
         ></List>
       )}
-    </div>
+    </section>
   );
 }
