@@ -2,11 +2,11 @@ import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 
 const StyledHeader = styled.header`
-  display:flex;
-	align-items: center;
-	justify-content: center;
-  padding:  1.6rem;
-  font-size: 1.6rem
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.6rem;
+  font-size: 1.6rem;
   line-height: 2rem;
 `;
 

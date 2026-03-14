@@ -1,0 +1,7 @@
+@layer base, scss, utilities;
+
+@import "tailwindcss";
+
+@layer scss {
+  @import "./layout/_index.scss";
+}

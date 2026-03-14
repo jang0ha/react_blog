@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import { useProjects } from "../hook/useProjects";
 import Loading from "../components/Loading";
 import { ListWrapper } from "../components/ListItem";
+import { TextArea } from "../components/Input";
+import Button from "../components/Button";
 
 export default function ProjectDetailPage() {
   const { key } = useParams();
@@ -96,6 +98,21 @@ export default function ProjectDetailPage() {
           ))}
         </div>
         {/* 다른 필드들도 추가 가능 */}
+      </ListWrapper>
+
+      <br />
+      <h3 className="text-[2rem] font-bold block mb-[2rem]">댓글</h3>
+      <ListWrapper>
+        <TextArea></TextArea>
+        <Button
+          title="댓글 등록"
+          style={{ marginTop: "1rem", marginBottom: "2rem" }}
+          onClick={() => {}}
+        />
+      </ListWrapper>
+      <ListWrapper>
+        {/* 댓글 리스트 */}
+        <p>댓글 2: 프로젝트에 대한 또 다른 의견입니다.</p>
       </ListWrapper>
     </div>
   );

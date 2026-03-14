@@ -16,6 +16,19 @@ const StyledInput = styled.input`
 		outline:1px solid #111;
 `;
 
+const StyledTextarea = styled(StyledInput).attrs({ as: "textarea" })`
+  resize: none;
+  min-height: 12rem;
+`;
+
+export const TextArea = forwardRef(function TextArea(props, ref) {
+  const { value, onChange, name } = props;
+
+  return (
+    <StyledTextarea value={value} onChange={onChange} ref={ref} name={name} />
+  );
+});
+
 export const TextInput = forwardRef(function TextInput(props, ref) {
   const { height, value, onChange, name } = props;
 
